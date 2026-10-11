@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Wing Chun Kuen System · Club de Wing Chun à Montmagny (95)</title>
+<meta name="description" content="Club de Wing Chun et Jeet Kune Do à Montmagny (Val-d'Oise). Cours le vendredi et le dimanche, dès 15 ans. 250 € par an, 10 % de remise pour les femmes.">
+<meta name="theme-color" content="#0c0a0a">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230c0a0a'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='%23d62828'>詠</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0a0a; --bg2:#151111; --line:#2b2222;
+  --red:#d62828; --red-d:#9d1c1c;
+  --text:#f4efec; --muted:#b3a8a4;
+  --head:"Oswald","Arial Narrow",Impact,sans-serif;
+  --body:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --cjk:"Noto Serif SC","Songti SC","SimSun",serif;
+  --max:1080px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--body);-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--head);font-weight:600;line-height:1.1;letter-spacing:.01em}
+h2{font-size:clamp(2rem,5vw,2.9rem);margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:56ch}
+section{padding:5rem 0}
+.sep{height:1px;background:linear-gradient(90deg,transparent,var(--red-d),transparent);border:0}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(12,10,10,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font:600 1.05rem var(--head);letter-spacing:.04em}
+.brand svg{width:36px;height:36px}
+nav ul{display:flex;gap:1.6rem;list-style:none;padding:0}
+nav a{text-decoration:none;color:var(--muted);font-size:.98rem;transition:color .2s}
+nav a:hover{color:var(--text)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:44px;height:44px;border-radius:10px;cursor:pointer}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:currentColor;margin:auto;position:relative;transition:transform .25s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:5.5rem 0 5rem;text-align:center;isolation:isolate}
+.hero::before{content:"";position:absolute;z-index:-2;left:50%;top:-8%;width:min(820px,130vw);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(214,40,40,.34) 0,rgba(214,40,40,.1) 45%,transparent 68%)}
+.kanji{position:absolute;z-index:-1;inset:50% auto auto 50%;transform:translate(-50%,-52%);font:700 clamp(14rem,48vw,32rem)/1 var(--cjk);color:#fff;opacity:.04;white-space:nowrap;pointer-events:none;user-select:none}
+.emblem{width:clamp(130px,30vw,190px);margin:0 auto 1.6rem;filter:drop-shadow(0 0 30px rgba(214,40,40,.35));animation:rise .9s ease both}
+.hero h1{font-size:clamp(2.6rem,9vw,5.2rem);text-transform:uppercase;letter-spacing:.02em;animation:rise .9s .1s ease both}
+.hero p.sub{font-size:clamp(1.1rem,3vw,1.35rem);color:var(--muted);max-width:34ch;margin:1rem auto 2rem;animation:rise .9s .2s ease both}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;animation:rise .9s .3s ease both}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 1.7rem;border-radius:999px;font:600 1rem var(--body);text-decoration:none;border:1.5px solid var(--red);transition:background .2s,transform .2s}
+.btn.main{background:var(--red);color:#fff}
+.btn.main:hover{background:#e63636;transform:translateY(-2px)}
+.btn.ghost{color:var(--text)}
+.btn.ghost:hover{background:rgba(214,40,40,.14)}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:3.5rem;animation:rise .9s .45s ease both}
+.facts div{background:var(--bg2);padding:1.1rem .8rem}
+.facts b{display:block;font:600 1.5rem var(--head);color:var(--text)}
+.facts span{font-size:.92rem;color:var(--muted)}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* disciplines */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.4rem}
+.disc{position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:2rem 1.6rem 2.1rem;transition:border-color .25s}
+.disc:hover{border-color:var(--red-d)}
+.disc .cjk{font:700 3.2rem/1 var(--cjk);color:var(--red);margin-bottom:1rem;letter-spacing:.05em}
+.disc h3{font-size:1.7rem;margin-bottom:.5rem}
+.disc p{color:var(--muted)}
+.more{margin-top:1.2rem;display:flex;gap:.8rem;align-items:flex-start;padding:1.2rem 1.4rem;border-left:3px solid var(--red);background:var(--bg2);border-radius:0 12px 12px 0;color:var(--muted)}
+.more strong{color:var(--text)}
+
+/* cours & tarifs */
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:1.2rem;margin-top:2.4rem}
+.panel{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:1.8rem}
+.panel h3{font-size:1.35rem;color:var(--muted);font-weight:500;margin-bottom:1rem}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0;padding-top:0}
+.row .day{font:600 1.6rem var(--head)}
+.row .hrs{font:500 1.35rem var(--head);color:var(--red)}
+.price{font:700 clamp(3.4rem,10vw,4.6rem)/1 var(--head)}
+.price small{font:500 1.2rem var(--body);color:var(--muted)}
+.tag{display:inline-block;margin-top:1rem;padding:.35rem .9rem;border-radius:999px;background:rgba(214,40,40,.15);color:#ff8a8a;font-size:.95rem;font-weight:600}
+.panel .note{margin-top:1rem;color:var(--muted);font-size:.98rem}
+
+/* lieu & contact */
+.contact{background:linear-gradient(180deg,var(--bg),#160d0d)}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2.4rem}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:1.8rem}
+.card h3{font-size:1.35rem;margin-bottom:.8rem}
+.card p{color:var(--muted)}
+.card a.link{display:inline-block;margin-top:.6rem;color:var(--text);font-weight:600;text-decoration-color:var(--red);text-underline-offset:4px;text-decoration-thickness:2px;word-break:break-word}
+.big{font:600 1.7rem var(--head);color:var(--text);text-decoration:none;display:block}
+
+footer{border-top:1px solid var(--line);padding:2rem 0 2.4rem;text-align:center;color:var(--muted);font-size:.92rem}
+footer .cjk{font:700 1.4rem var(--cjk);color:var(--red);display:block;margin-bottom:.4rem;letter-spacing:.3em}
+
+/* reveal: only the cards, once */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:820px){
+  section{padding:3.6rem 0}
+  .burger{display:block}
+  nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);display:none}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:.5rem 1.25rem 1rem}
+  nav a{display:block;padding:.9rem 0;font-size:1.1rem;border-bottom:1px solid var(--line)}
+  .duo,.grid2,.cards{grid-template-columns:1fr}
+  .hero{padding:3.5rem 0 3.5rem}
+}
+@media(max-width:420px){.facts{grid-template-columns:1fr}.row{flex-direction:column;gap:.1rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="logo" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="96" fill="#0c0a0a" stroke="#d62828" stroke-width="5"/>
+      <circle cx="100" cy="100" r="86" fill="none" stroke="#f4efec" stroke-width="1.2" opacity=".6"/>
+      <path id="arcT" d="M30 100a70 70 0 0 1 140 0" fill="none"/>
+      <text font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="17" fill="#f4efec" letter-spacing="2"><textPath href="#arcT" startOffset="50%" text-anchor="middle">WING CHUN KUEN SYSTEM</textPath></text>
+      <text x="100" y="86" text-anchor="middle" font-family="Noto Serif SC,Songti SC,serif" font-weight="700" font-size="34" fill="#f4efec">詠</text>
+      <text x="100" y="118" text-anchor="middle" font-family="Noto Serif SC,Songti SC,serif" font-weight="700" font-size="34" fill="#d62828">春</text>
+      <g stroke="#f4efec" stroke-width="3.2" stroke-linecap="round" fill="none">
+        <path d="M62 128 L138 150"/><path d="M138 128 L62 150"/>
+      </g>
+      <text x="100" y="180" text-anchor="middle" font-family="Oswald,Arial Narrow,sans-serif" font-weight="700" font-size="15" fill="#f4efec" letter-spacing="3">WCKS</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Wing Chun Kuen System, accueil">
+      <svg aria-hidden="true"><use href="#logo"/></svg>
+      <span>WING CHUN KUEN SYSTEM</span>
+    </a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <nav id="menu" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#club">Le club</a></li>
+        <li><a href="#cours">Cours et tarifs</a></li>
+        <li><a href="#lieu">Où nous trouver</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="kanji" aria-hidden="true">詠春</div>
+    <div class="wrap">
+      <svg class="emblem" role="img" aria-label="Logo du Wing Chun Kuen System"><use href="#logo"/></svg>
+      <h1>Wing Chun<br>Kuen System</h1>
+      <p class="sub">Découvrez le Wing Chun, un art martial complet et efficace.</p>
+      <div class="cta">
+        <a class="btn main" href="#cours">Voir les horaires</a>
+        <a class="btn ghost" href="#contact">Nous contacter</a>
+      </div>
+      <div class="facts">
+        <div><b>2 cours</b><span>par semaine</span></div>
+        <div><b>Dès 15 ans</b><span>ouvert à tous</span></div>
+        <div><b>250 €</b><span>par an</span></div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="sep">
+
+  <section id="club">
+    <div class="wrap">
+      <h2>Plus qu’un club</h2>
+      <p class="lead">À Montmagny, nous pratiquons le Wing Chun, un art martial fondé sur la précision, la structure et le sang-froid. Débutants comme pratiquants confirmés, chacun progresse à son rythme.</p>
+      <div class="duo">
+        <article class="disc rv">
+          <div class="cjk" aria-hidden="true">詠春拳</div>
+          <h3>Wing Chun</h3>
+          <p>Un art martial de combat rapproché : garde, déplacements, enchaînements de mains, travail au mannequin de bois et exercices à deux pour développer réflexes et sensibilité.</p>
+        </article>
+        <article class="disc rv">
+          <div class="cjk" aria-hidden="true">截拳道</div>
+          <h3>Jeet Kune Do</h3>
+          <p>La voie du poing qui intercepte, héritée de Bruce Lee : un travail direct et sans fioritures, qui complète naturellement le Wing Chun.</p>
+        </article>
+      </div>
+      <div class="more rv">
+        <p><strong>De nombreux stages</strong> sont proposés tout au long de l’année, pour approfondir la technique et rencontrer d’autres pratiquants.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section id="cours">
+    <div class="wrap">
+      <h2>Cours et tarifs</h2>
+      <p class="lead">Deux rendez-vous par semaine, l’abonnement annuel donne accès à tous les cours.</p>
+      <div class="grid2">
+        <div class="panel rv">
+          <h3>Horaires</h3>
+          <div class="row"><span class="day">Vendredi</span><span class="hrs">19h00 – 21h30</span></div>
+          <div class="row"><span class="day">Dimanche</span><span class="hrs">9h30 – 12h00</span></div>
+        </div>
+        <div class="panel rv">
+          <h3>Tarif</h3>
+          <div class="price">250 €<small> / an</small></div>
+          <span class="tag">10 % de remise pour les femmes</span>
+          <p class="note">Accessible dès 15 ans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="sep">
+
+  <section class="contact" id="lieu">
+    <div class="wrap">
+      <h2>Où nous trouver</h2>
+      <p class="lead">Les cours ont lieu au gymnase Charles Grimaud, à Montmagny dans le Val-d’Oise.</p>
+      <div class="cards">
+        <div class="card rv">
+          <h3>Adresse</h3>
+          <p>Gymnase Charles Grimaud<br>24 rue de Villetaneuse<br>95360 Montmagny</p>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&query=24+rue+de+Villetaneuse+95360+Montmagny" target="_blank" rel="noopener">Ouvrir dans Google Maps</a>
+        </div>
+        <div class="card rv" id="contact">
+          <h3>Contact</h3>
+          <p>Un essai, une question ? Écrivez-nous ou appelez, nous répondons avec plaisir.</p>
+          <a class="big" href="tel:+33663017441" style="margin-top:.8rem">06 63 01 74 41</a>
+          <a class="link" href="mailto:frrwc95@gmail.com">frrwc95@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="cjk" aria-hidden="true">詠春</span>
+    Wing Chun Kuen System · Montmagny (95360)
+  </div>
+</footer>
+
+<script>
+const btn=document.querySelector('.burger'),nav=document.getElementById('menu');
+btn.addEventListener('click',()=>{const o=nav.classList.toggle('open');btn.setAttribute('aria-expanded',o);btn.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu')});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
